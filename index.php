@@ -11,4 +11,10 @@ $person['Name'] = 'Jason';
 
 unset($person['Age']);
 
+require 'functions.php';
+
+$animal = ['dog', 'cat'];
+
+dd($animal);
+
 require 'index.view.php';
