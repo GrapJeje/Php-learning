@@ -36,9 +36,54 @@ header {
 
 <ul>
 
-    <?php foreach ($person as $key => $feature) : ?>
-     <li><strong><?= $key; ?></strong> <?= $feature; ?></li>
+    <?php foreach ($task as $key => $feature) : ?>
+     <li><strong><?= ucwords($key); ?></strong> <?= $feature; ?></li>
     <?php endforeach; ?>
+
+</ul>
+
+<ul>
+     <li>
+        <strong>Name: </strong> <?= $task['title']; ?>
+    </li>
+
+    <li>
+        <strong>Due Data: </strong> <?= $task['due']; ?>
+    </li>
+
+    <li>
+        <strong>Person Responsible: </strong> <?= $task['assigned_to']; ?>
+    </li>
+
+    <li>
+        <strong>Status: </strong> <?= $task['completed'] ? 'Complete' : 'Incomplete' ; ?>
+    </li>
+
+</ul>
+
+<ul>
+     <li>
+        <strong>Name: </strong> <?= $task['title']; ?>
+    </li>
+
+    <li>
+        <strong>Due Data: </strong> <?= $task['due']; ?>
+    </li>
+
+    <li>
+        <strong>Person Responsible: </strong> <?= $task['assigned_to']; ?>
+    </li>
+
+    <li>
+    
+        <strong>Status: </strong> 
+        
+        <?php if ($task['completed']) : ?>
+            <span>&#9989</span>
+        <?php else : ?>
+            <span>Incomplete</span>
+        <?php endif; ?>
+    </li>
 
 </ul>
     
